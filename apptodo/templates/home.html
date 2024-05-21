@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+</head>
+<body>
+ 
+
+    
+<div class="parent-container">
+    <div class="sidebar">
+        <ul>
+            <div >
+                {% if message %}
+                 <h1 class="marquee">{{message}}</h1>
+                {% endif %}
+                <h1 class="heading"> welcome todo app</h1> 
+            </div>
+            <div class="sidbarlist">
+                <li > <a href="{% url 'addtask' %}"> Addtask</a></li>
+                <li > <a href="{% url 'viewtask' %}">view task</a></li>
+                <a href="{% url 'logout' %}"><button class="butlogout">Logout</button></a>
+            </div>
+        </ul>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+
+    </div>
+</div>
+
+</body>
+</html>

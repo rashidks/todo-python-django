@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/Userlogin.css' %}">
+</head>
+<body class="body1">
+    <h1 class="heading1">WELCOME</h1>
+    <h1 class="heading">Please login here....</h1>
+    
+    <div class="cont">
+    <form  method="post" action="{% url 'Userlogin' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="label1"><label for="" >USERNAME</label></div><br>
+        <input type="text" name="username" placeholder="please enter username"><br>
+        <div class="label1"><label for="" >PASSWORD</label></div><br>
+
+        <input type="password" name="password" placeholder="please enter password"><br>
+        <div class="butlogin">
+            <button type="submit" class="butlogin1">LOGIN</button><br>
+        </div>
+    </form>
+    <p >If you have not registered please &nbsp;<a  href="{% url 'register' %}"><button class="butregister" >REGISTER</button></a></p>
+    </div>       
+
+</body>
+</html>

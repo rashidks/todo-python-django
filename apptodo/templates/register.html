@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/register.css'%}">
+</head>
+<body >
+    <h1 class="heading1"> *** PLEASE REGISTER HERE ***</h1>
+<div class="maindiv">
+    <form  method="post" action="{% url 'register' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="">USERNAME</label>
+        <input type="text" name="username"><br> 
+        <label for="">EMAIL</label>
+        <input type="email" name="email"><br>
+        <label for="">PASSWORD</label>
+        <input type="password" name="password"><br>
+        <label for="">CONFIRM PASSWORD</label>
+        <input type="password" name="confirmpassword"><br>
+        <div ><button type="submit" class="butregister butregister1">REGISTER</button><br></div>
+    </form>
+</div>
+    {% if error_msg %}
+    <p>{{error_msg}}</p>
+    {% endif %}
+    {% if errormsg %}
+    <p>{{errormsg}}</p>
+    {% endif %}
+</body>
+</html>

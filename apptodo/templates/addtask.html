@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+{% block content %}
+<div class="addtaskheading">
+    <h1 > YOUNAME Please Add Your Task</h1></div>
+
+<div class="form1">
+    <div class="formtext">
+    <form method="post" action="{% url 'addtask' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title" >Title</label>
+        <input type="text"  name="title" placeholder="Enter the title"> <br>
+        <label for="description">Description</label>
+        <input type="text"  name="description" placeholder="Enter the description"><br>
+        <div  class="addbutton">
+
+        <button type="submit" class="butadd ">ADD</button></div>
+    </form>
+</div>
+</div>
+{% endblock %}

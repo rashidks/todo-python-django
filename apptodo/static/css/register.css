@@ -1,0 +1,38 @@
+.maindiv{
+    padding: 2.5cm;
+    margin: 150px;
+    margin-top: 60px;
+    font-size:30px;
+    color: crimson;
+    background-color:black;
+    border-radius: 30px;
+}
+body{
+    background-color: rgb(176, 176, 148);
+}
+.heading1{
+    text-align: center;
+    padding-top: 50px;
+    font-size:45px ;
+}
+input[type="text"],[type="email"],[type="password"]{
+width: 100%;
+padding: 7px;
+border-radius: 15px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.butregister{
+    margin-top:40px ;
+    background-color: red;
+    color:yellow;
+    width: 200px;
+    border-radius: 30px;
+    margin-left: 330px;
+    padding: 10px;
+    font-weight: 800;
+    cursor: pointer;
+
+    }
+.butregister1:hover{
+    background-color:rgb(204, 13, 13);
+}

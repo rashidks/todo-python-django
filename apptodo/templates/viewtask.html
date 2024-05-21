@@ -1,0 +1,27 @@
+
+{% extends 'home.html' %}
+{% block content %}
+<div>
+<h1 class="viewtaskheading"> Here Your Task </h1>
+    <table  class="table1">
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>description</th>
+                <th style="row-gap: 10px;">action</th>
+            </tr>
+        </thead>
+        {% for task in tasks%}
+        <tr>
+            <th>{{task.title}}</th>
+            <th>{{task.description}}</th>
+            <th> <a href="{% url 'edittask' task.id %}"><button class="buteditview">edit</button></a></th>
+            <th>
+                 <form method="post" action="{% url 'deletetask' task.id %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                <button type="submit"class="butdelview">delete</button>
+            </form></th>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
